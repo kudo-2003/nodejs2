@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Luong-quang-hung</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>Danh sach</h1>
+    <a href="/form-add"><button>Them lop</button></a>
+    <table border="4">
+        <tr>
+
+            <th>ID</th>
+            <th>MaSinhVien</th>
+            <th>NgaySinh</th>
+            <th>GioiTinh</th>
+            <th>QueQuan</th>
+            <th>Sua chua</th>
+
+        </tr>
+        <% lops.forEach(item => { %>
+            <tr>
+                <td>
+                    <%= item.id %>
+                </td>
+                <td>
+                    <%= item.MaSinhVien %>
+                </td>
+                <td>
+                    <%= item.NgaySinh%>
+                </td>
+                <td>
+                    <%= item.GioiTinh %>
+                </td>
+                <td>
+                    <%= item.QueQuan %>
+                </td>
+                <td><a href="/xoa/<%= item.id %>">Update</a> || <a href="/form-su-chua/<%= item._id %>">Delete</a></td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>
